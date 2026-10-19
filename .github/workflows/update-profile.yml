@@ -1,0 +1,71 @@
+name: Update GitHub Profile Stats
+
+on:
+  schedule:
+    - cron: "0 21 * * *" # 06:00 JST
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/update-profile.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-stats
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Check private stats token
+        env:
+          STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
+        run: |
+          test -n "$STATS_TOKEN" || { echo 'Add GH_STATS_TOKEN to repository Actions secrets'; exit 1; }
+
+      - name: Generate GitHub Stats
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=n3dypop&show_icons=true&count_private=true&include_all_commits=true&theme=tokyonight
+          path: assets/profile_stats.svg
+          token: ${{ secrets.GH_STATS_TOKEN }}
+          fail_on_error: true
+
+      - name: Generate Top Languages
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=n3dypop&layout=compact&langs_count=8&theme=tokyonight
+          path: assets/profile_languages.svg
+          token: ${{ secrets.GH_STATS_TOKEN }}
+          fail_on_error: true
+
+      - name: Generate WakaTime Stats
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: wakatime
+          options: username=ad185686-94f7-430e-a729-bd477a12173a&layout=compact&langs_count=8&theme=tokyonight
+          path: assets/profile_wakatime.svg
+          token: ${{ secrets.GH_STATS_TOKEN }}
+          fail_on_error: true
+
+      - name: Commit SVGs only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/profile_stats.svg assets/profile_languages.svg assets/profile_wakatime.svg
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: refresh profile stats'
+            git push
+          fi
