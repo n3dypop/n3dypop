@@ -1,5 +1,6 @@
 <div align="center">
   <h1>Hey There, I’m n3dypop 👋</h1>
+  <p><strong>Building TUI applications, CLI tools, and experimental projects.</strong></p>
 </div>
 
 <h2>About Me</h2>
