@@ -16,8 +16,8 @@ fetch() {
 
   # Layout configuration
   local right_offset=3
-  local label_column=50
-  local value_column=70
+  local label_column=52
+  local value_column=76
 
   local -a details=(
     'n3dypop@github|'
