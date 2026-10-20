@@ -1,5 +1,8 @@
 <div align="right">
+  <p>
     <img src="https://komarev.com/ghpvc/?username=n3dypop&color=7aa2f7&style=flat-square&label=PROFILE+VIEWS" alt="Profile Views"/>
+    &emsp;
+  </p>
 </div>
 
 <div align="center">
