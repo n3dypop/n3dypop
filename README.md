@@ -1,3 +1,9 @@
+<div align="right">
+  <p align="center">
+    <img src="https://komarev.com/ghpvc/?username=n3dypop&color=blue&style=flat-square&label=PROFILE+VIEWS" alt="Profile Views"/>
+  </p>
+</div>
+
 <div align="center">
   <h1>Hey There, I’m n3dypop 👋</h1>
   <p><strong>Building TUI applications, CLI tools, and experimental projects.</strong></p>
