@@ -1,5 +1,5 @@
 <div align="right">
-    <img src="https://komarev.com/ghpvc/?username=n3dypop&color=7aa2f7&style=flat-square" alt="Profile Views"/>
+    <img src="https://komarev.com/ghpvc/?username=n3dypop&color=7aa2f7&style=flat-square&label=PROFILE+VIEWS" alt="Profile Views"/>
 </div>
 
 <div align="center">
@@ -20,7 +20,7 @@
 <h2>GitHub Stats</h2>
 <h3>Snake</h3>
 <div align="center">
-  <img src="./assets/github-snakedark.svg" width="100%" alt="GitHub Contribution Snake"/>
+  <img src="./assets/github-snake-dark.svg" width="100%" alt="GitHub Contribution Snake"/>
 </div>
 
 <h3>Development Stats</h3>
