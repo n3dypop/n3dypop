@@ -14,12 +14,22 @@
 </p>
 
 <h2>GitHub Stats</h2>
+<h3>Snake</h3>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/github-snakedark.svg"/>
+    <source media="(prefers-color-scheme: light)" srcset="./assets/github-snake.svg"/>
+    <img alt="GitHub Contribution Snake" src="./assets/github-snake.svg" width="100%"/>
+  </picture>
+</p>
+
+<h3>Development Stats</h3>
 <div align="center">
   <img src="./assets/profile_stats.svg" alt="n3dypop GitHub statistics" height="180" />
   <img src="./assets/profile_languages.svg" alt="n3dypop top languages" height="180" />
 </div>
 
-<h2>Coding Activity</h2>
+<h3>Coding Activity</h3>
 <div align="center">
   <img src="./assets/profile_wakatime.svg" alt="WakaTime coding activity" width="495" />
 </div>

@@ -1,0 +1,47 @@
+
+name: Update GitHub Contribution Snake
+
+on:
+  schedule:
+    - cron: "0 21 * * *" # 06:00 JST
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/update-snake.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-snake
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Generate Contribution Snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: n3dypop
+          outputs: |
+            assets/github-snake.svg?color_snake=#7aa2f7&color_dots=#ebedf0,#c0caf5,#9aa5ce,#7aa2f7,#414868
+            assets/github-snake-dark.svg?color_snake=#7aa2f7&color_dots=#1a1b26,#292e42,#414868,#7aa2f7,#bb9af7
+
+      - name: Commit SVGs only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/github-snake.svg assets/github-snake-dark.svg
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: refresh contribution snake'
+            git push
+          fi
