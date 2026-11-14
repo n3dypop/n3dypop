@@ -1,8 +1,8 @@
 
       <svg
         width="495"
-        height="140"
-        viewBox="0 0 495 140"
+        height="90"
+        viewBox="0 0 495 90"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
@@ -133,74 +133,8 @@
       <rect x="25" y="0" width="440" height="8" fill="white" rx="5" />
       </mask>
       
-          <rect
-            mask="url(#rect-mask)"
-            data-testid="lang-progress"
-            x="0"
-            y="0"
-            width="346.56449999999995"
-            height="8"
-            fill="#f1e05a"
-          />
-        
-          <rect
-            mask="url(#rect-mask)"
-            data-testid="lang-progress"
-            x="346.56449999999995"
-            y="0"
-            width="87.14099999999999"
-            height="8"
-            fill="#083fa1"
-          />
-        
-          <rect
-            mask="url(#rect-mask)"
-            data-testid="lang-progress"
-            x="433.7054999999999"
-            y="0"
-            width="29.2485"
-            height="8"
-            fill="#012456"
-          />
-        
-          <rect
-            mask="url(#rect-mask)"
-            data-testid="lang-progress"
-            x="462.9539999999999"
-            y="0"
-            width="1.767"
-            height="8"
-            fill="#7355dd"
-          />
-        
       
-    <g transform="translate(25, 25)">
-      <circle cx="5" cy="6" r="5" fill="#f1e05a" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        JavaScript - 7 hrs 30 mins
-      </text>
-    </g>
-  
-    <g transform="translate(230, 25)">
-      <circle cx="5" cy="6" r="5" fill="#083fa1" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        Markdown - 1 hr 53 mins
-      </text>
-    </g>
-  
-    <g transform="translate(25, 50)">
-      <circle cx="5" cy="6" r="5" fill="#012456" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        PowerShell - 38 mins
-      </text>
-    </g>
-  
-    <g transform="translate(230, 50)">
-      <circle cx="5" cy="6" r="5" fill="#7355dd" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        C# - 2 mins
-      </text>
-    </g>
+    <text x="25" y="11" class="stat bold">User doesn&#39;t publicly share detailed code statistics</text>
   
     
     </svg>
